@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import render_field %}
+
+{% block title %}Create App{% endblock %}
+
+{% block content %}
+{% if owned_consumers %}
+<div>
+    <p>Owned Consumer Apps</p>
+    {% for consumer in owned_consumers %}
+    <ul>
+        <li>name: {{ consumer.name }}</li>
+        <li>key: {{ consumer.key }}</li>
+        <li>secret: {{ consumer.secret }}</li>
+    </ul>
+    {% endfor %}
+</div>
+{% endif %}
+<div>
+    <form method="POST">
+        <fieldset>
+            <legend>Create a new consumer app</legend>
+
+            {{ render_field(form.name) }}
+            {{ render_field(form.callback_uri) }}
+
+            <div>
+                <button>Create</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

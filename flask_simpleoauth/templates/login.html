@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import render_field %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div>
+    <form method="POST">
+        <fieldset>
+            <legend>Please sign in</legend>
+
+            {{ render_field(form.login) }}
+            {{ render_field(form.password) }}
+
+            <div>
+                <button>Sign in</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
