@@ -11,15 +11,21 @@ Because OAuth doesn't have to be hard...
 You're going to need MongoDB setup on your platform. If you're using OS X and
 brew you could do this:
 
-    # brew install mongo
+```sh
+$ brew install mongo
+```
 
 Once you've got MongoDB the necessary Python packages can be installed like so:
 
-    $ pip install -r requirements.txt
+```sh
+$ pip install -r requirements.txt
+```
 
 Okay you're all set. You can run it now, with any luck:
 
-    $ python runner.py
+```sh
+$ python runner.py
+```
 
 Now visit [http://localhost:5000/user/new](http://localhost:5000/user/new) in
 your browser and get to work...you probably also want to set up a consumer app
