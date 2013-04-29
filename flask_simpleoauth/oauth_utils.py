@@ -98,7 +98,7 @@ def verify_request_token(request):
     token.oauth_verifer = _generate_verifier()
     token.save()
 
-    if token.callback is not None:
+    if token.oauth_callback is not None:
         if user_verified:
             params = {'oauth_token': token.oauth_token,
                       'oauth_verifier': token.oauth_verifier,
@@ -106,7 +106,7 @@ def verify_request_token(request):
             return redirect(token.callback, params=params)
 
         token.delete()
-        return redirect(token.callback)
+        return redirect(token.oauth_callback)
 
     token.oauth_verifier = _generate_verifier()
     token.save()

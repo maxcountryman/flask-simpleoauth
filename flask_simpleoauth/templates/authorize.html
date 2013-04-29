@@ -6,6 +6,24 @@
 
 {% block content %}
 <div>
-    <p>TODO</p>
+    <form method="POST">
+        <fieldset>
+            <legend>{{consumer.name}} wants to authorize</legend>
+
+            <input type="hidden" id="verified" name="verified" value="0">
+
+            <div>
+                <button id="verify-consumer">Accept</button>
+            </div>
+            <div>
+                <button>Decline</button>
+            </div>
+        </fieldset>
+    </form>
 </div>
+<script>
+document.getElementById("verify-consumer").onclick = function() {
+    document.getElementById("verified").value = "1";
+};
+</script>
 {% endblock %}

@@ -13,7 +13,7 @@ class User(db.Document):
     login = db.StringField(required=True)
     passwd_hash = db.StringField(required=True)
 
-    # consumers the user is subscribed to
+    # consumers the user has authorized
     consumers = db.ListField(db.ObjectIdField('Consumer'))
 
     # consumers the user has created
@@ -66,6 +66,7 @@ class RequestToken(TokenMixin):
 
     oauth_callback = db.StringField()
     oauth_verifier = db.StringField()
+    consumer_key = db.StringField(required=True)
     expires = db.IntField(required=True)
 
     def is_expired(self):
