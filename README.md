@@ -40,12 +40,12 @@ abstract. For this reason, I've created this as a demonstration of what's
 possible and to maybe also give you a foundation for your own projects.
 
 The idea here is to show you how you could organize a Flask project to support
-OAuth and show how easy to is to use rauth's robust signing logic outside of
-its client scope. (In the future, look for this to be split out into its own
-package.)
+OAuth and demonstrate how easy it is to is to use rauth's robust signing logic
+outside of its client scope. (In the future, look for this to be split out into
+its own package.)
 
 For these reasons, the frontend, the models, and anything else that wasn't
-essential to "making it work" was left pretty barren. I want to leave these
+essential to "making it work" was left fairly barren. I want to leave these
 rough edges as an open invitation for others to round out their own
 implementations. And I hope that things like the MongoEngine documents might
 be, with minimal pain, swapped out for whatever you like.
